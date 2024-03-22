@@ -1,0 +1,33 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "A read me file",
+  "main": "App.js",
+  "scripts": {
+    "test": "Jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jesee-Avanakshi/react.git"
+  },
+  "author": "Jesee Avanakshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jesee-Avanakshi/react/issues"
+  },
+  "homepage": "https://github.com/Jesee-Avanakshi/react#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "all 2 versions"
+  ]
+    
+  
+
+}
