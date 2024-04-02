@@ -4,6 +4,8 @@
   "description": "A read me file",
   "main": "App.js",
   "scripts": {
+    "start" : "parcel index.html",
+    "build": "parcel build index.html ",
     "test": "Jest"
   },
   "repository": {
@@ -25,7 +27,7 @@
     "react-dom": "^18.2.0"
   },
   "browserslist": [
-    "all 2 versions"
+    "last 2 Chrome versions"
   ]
     
   

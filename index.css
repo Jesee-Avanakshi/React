@@ -1,14 +1,51 @@
-#heading{
-    color: blue
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    
 }
 
-#parent{
-    color: blue
+.logo{
+    width :200px ;
 }
 
-#child1{
-    color: rgb(91, 7, 7)
+.nav-items {
+    padding: 20px;
+    
 }
-#child2{
-    color: rgb(83, 67, 154)
+.nav-items > ul{
+    display: flex;
+    font-size: 24px;
 }
+
+.nav-items > ul > li{
+    padding: 10px;
+    margin: 10px;
+    list-style: none;
+}
+
+.search{
+    padding: 10px;
+}
+.res-card{
+    width: 200px;
+    height : 300px;
+    padding: 5px;
+    margin: 8px;
+}
+
+.res-card:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.res-logo{
+    width: 100%;
+    
+}
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
