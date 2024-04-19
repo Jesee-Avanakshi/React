@@ -2,7 +2,8 @@ import { resList } from "../utils/mockdata";
 import ResCard from "./ResCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-
+import { Link } from "react-router-dom";
+// import { resList } from "../utils/mockdata";
 
 const Body =() => {
     
@@ -15,13 +16,13 @@ const Body =() => {
     },[]);
 
     const fetchData = async ()=>{
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.8636868&lng=77.5804993&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.8636868&lng=77.5804993&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json_data = await data.json()
         console.log(json_data);
 
         setListOfRestaurant(json_data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurants(listOfRestaurants);
-        setFilteredRestaurants(json_data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurants(json_data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     if (listOfRestaurants.length === 0 ){
@@ -54,7 +55,10 @@ const Body =() => {
           <div className="res-container">
               {
                   filteredRestaurants.map((restaurant) =>
-                    <ResCard key = {restaurant.info.id} resData = {restaurant}/>
+                    <Link to = {"/restaurants/" +restaurant.info.id } key = {restaurant.info.id} className = "res-link">
+                        <ResCard  resData = {restaurant}/>
+                    </Link>
+                    
             
                    )
               }

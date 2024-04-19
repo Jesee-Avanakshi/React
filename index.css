@@ -92,3 +92,35 @@
 .search-btn{
     margin-left: 2px;
 }
+
+.res-link{
+    text-decoration: none;
+    color: inherit;
+}
+.menu{
+    border: 0px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.menu-card-container{
+    width: 350px;
+    height: auto;
+    align-items: center;
+    background-color: bisque;
+    color: rgb(14, 14, 13);
+}
+.menu-items{
+    text-align: left;
+    background-color: rgb(202, 171, 78);
+    padding: 5px;
+    color: whitesmoke;
+    
+}
+
+.menu-items > ul{
+    color: black;
+    font-size: large;
+
+}
