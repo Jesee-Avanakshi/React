@@ -1,4 +1,4 @@
-A read me file
+
 
 
 
@@ -19,4 +19,3 @@ A read me file
  *  Contact
  * 
  */
-// styles can be given as javascript object

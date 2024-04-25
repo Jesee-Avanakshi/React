@@ -3,6 +3,7 @@ import ResCard from "./ResCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 // import { resList } from "../utils/mockdata";
 
 const Body =() => {
@@ -10,6 +11,8 @@ const Body =() => {
     const [listOfRestaurants,setListOfRestaurant] = useState([]);
     const [searchText,setSearchText] = useState("");
     const [filteredRestaurants,setFilteredRestaurants] = useState(listOfRestaurants);
+
+    const onlineStatus = useOnlineStatus();
 
     useEffect(()=>{
         fetchData();
@@ -29,6 +32,14 @@ const Body =() => {
         return <Shimmer />;
     }
     
+    
+
+    if(onlineStatus == false){
+        return <div>
+            <h1> Looks like you lost the connection. Please check!!</h1>
+        </div>
+    }
+
     return(
       <div className="body">
           <div className="filter">
@@ -47,7 +58,9 @@ const Body =() => {
 
             </div>
             <button className ="filter-btn" onClick={()=> {
-                const filtered_restaurants = listOfRestaurants.filter((restaurant)=> restaurant.info.avgRating >=4.2);
+                console.log(listOfRestaurants);
+                const filtered_restaurants = listOfRestaurants.filter((restaurant)=> restaurant.info.avgRating >= 4.5);
+                console.log(filtered_restaurants);
                 setListOfRestaurant(filtered_restaurants);
 
             }}> Top Rated Restaurant </button>
